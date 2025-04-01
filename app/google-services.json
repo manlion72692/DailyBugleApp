@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "867044470918",
+    "project_id": "dailybugleapp-dfcb4",
+    "storage_bucket": "dailybugleapp-dfcb4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:867044470918:android:1cdf822f3017fe2d256107",
+        "android_client_info": {
+          "package_name": "com.example.dailybugleapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5i1LiS2WbzDgGk2iUlRTu_5fx_h7jGPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

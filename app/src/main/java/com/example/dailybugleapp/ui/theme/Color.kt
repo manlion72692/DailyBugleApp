@@ -1,4 +1,4 @@
-package com.example.dailybudgetapp.ui.theme
+package com.example.dailybugleapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

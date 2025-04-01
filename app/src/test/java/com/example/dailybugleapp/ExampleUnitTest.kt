@@ -1,4 +1,4 @@
-package com.example.dailybudgetapp
+package com.example.dailybugleapp
 
 import org.junit.Test
 
