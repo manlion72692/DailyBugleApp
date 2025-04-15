@@ -1,5 +1,7 @@
 package com.example.dailybugleapp
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -25,6 +27,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -80,7 +83,9 @@ fun DailyBugleHomeActivity() {
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             CardWithImageAndText(imageRes = R.drawable.daily_budget, title = "Create New Article",1)
-            CardWithImageAndText(imageRes = R.drawable.daily_budget, title = "Add Contributors",2)
+//            CardWithImageAndText(imageRes = R.drawable.daily_budget, title = "Add Contributors",2)
+            CardWithImageAndText(imageRes = R.drawable.daily_budget, title = "Search News",2)
+
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -115,12 +120,27 @@ fun DailyBugleHomeActivity() {
 @Composable
 fun CardWithImageAndText(imageRes: Int, title: String,cardId: Int) {
 
+    val context = LocalContext.current as Activity
+
+
     Card(
         modifier = Modifier
             .width(150.dp)
             .height(150.dp)
             .clickable {
 //                onCardClicked(cardId)
+
+                when(cardId)
+                {
+                    1 -> {
+                        context.startActivity(Intent(context, CreateNewsFeed::class.java))
+                    }
+
+                    2->{
+                        context.startActivity(Intent(context, SearchNewsActivity::class.java))
+
+                    }
+                }
 
 
             },

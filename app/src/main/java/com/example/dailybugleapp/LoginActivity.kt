@@ -161,6 +161,10 @@ fun customerLogin(customerData: CustomerData, context: Context) {
             if (dbData != null) {
                 if (dbData.password == customerData.password) {
 
+                    DailyBugleData.writeLS(context, true)
+                    DailyBugleData.writeMail(context, dbData.emailid)
+                    DailyBugleData.writeUserName(context, dbData.name)
+
                     Toast.makeText(context, "Login Sucessfully", Toast.LENGTH_SHORT).show()
 
                     context.startActivity(Intent(context, HomeActivity::class.java))

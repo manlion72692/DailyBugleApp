@@ -48,6 +48,17 @@ fun WelComeScreen() {
         delay(3000)
 
 
+        val currentStatus = DailyBugleData.readLS(context)
+
+        if(currentStatus)
+        {
+            context.startActivity(Intent(context, HomeActivity::class.java))
+            context.finish()
+        }else{
+            context.startActivity(Intent(context, LoginActivity::class.java))
+            context.finish()
+        }
+
             context.startActivity(Intent(context, LoginActivity::class.java))
             context.finish()
 
