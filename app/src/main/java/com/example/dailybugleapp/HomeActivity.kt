@@ -5,8 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -34,8 +32,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
+
+//00abacfdd786437b8c22413a603fd137
 
 class HomeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,23 +55,13 @@ fun DailyBugleHomeActivity() {
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(6.dp))
-        Text(
-            text = "Welcome to Daily Bugle",
-            style = MaterialTheme.typography.headlineSmall,
-            color = Color(0xFF5D3FD3),
-            fontWeight = FontWeight.Bold,
+
+        Image(
             modifier = Modifier
-                .align(Alignment.Start)
-                .padding(horizontal = 12.dp)
-        )
-        Text(
-            text = "Hi, User !",
-            style = MaterialTheme.typography.headlineMedium,
-            color = Color(0xFF5D3FD3),
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier
-                .align(Alignment.Start)
-                .padding(horizontal = 12.dp)
+                .fillMaxWidth()
+                .height(100.dp),
+            painter = painterResource(id = R.drawable.ic_dailybugle),
+            contentDescription = "Lakshminarasimha Anipakula App",
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -82,9 +71,13 @@ fun DailyBugleHomeActivity() {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            CardWithImageAndText(imageRes = R.drawable.daily_budget, title = "Create New Article",1)
+            CardWithImageAndText(
+                imageRes = R.drawable.iv_breakingnews,
+                title = "Breaking News",
+                1
+            )
 //            CardWithImageAndText(imageRes = R.drawable.daily_budget, title = "Add Contributors",2)
-            CardWithImageAndText(imageRes = R.drawable.daily_budget, title = "Search News",2)
+            CardWithImageAndText(imageRes = R.drawable.iv_search_news, title = "Search News", 2)
 
         }
 
@@ -95,8 +88,8 @@ fun DailyBugleHomeActivity() {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            CardWithImageAndText(imageRes = R.drawable.daily_budget, title = "Manage Article",3)
-            CardWithImageAndText(imageRes = R.drawable.daily_budget, title = "Delete Article", 4)
+            CardWithImageAndText(imageRes = R.drawable.iv_bookmarked, title = "BookMarked Article", 3)
+            CardWithImageAndText(imageRes = R.drawable.iv_contactus, title = "Contact Us", 4)
 
         }
 
@@ -106,8 +99,8 @@ fun DailyBugleHomeActivity() {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            CardWithImageAndText(imageRes = R.drawable.daily_budget, title = "Access Profile",5)
-            CardWithImageAndText(imageRes = R.drawable.daily_budget, title = "Logout", 6)
+            CardWithImageAndText(imageRes = R.drawable.iv_profile, title = "Access Profile", 5)
+            CardWithImageAndText(imageRes = R.drawable.iv_logout, title = "Logout", 6)
 
         }
 //        CardWithImageAndText(imageRes = R.drawable.daily_budget, title = "Logout", 5)
@@ -116,9 +109,8 @@ fun DailyBugleHomeActivity() {
 }
 
 
-
 @Composable
-fun CardWithImageAndText(imageRes: Int, title: String,cardId: Int) {
+fun CardWithImageAndText(imageRes: Int, title: String, cardId: Int) {
 
     val context = LocalContext.current as Activity
 
@@ -130,14 +122,23 @@ fun CardWithImageAndText(imageRes: Int, title: String,cardId: Int) {
             .clickable {
 //                onCardClicked(cardId)
 
-                when(cardId)
-                {
+                when (cardId) {
                     1 -> {
-                        context.startActivity(Intent(context, CreateNewsFeed::class.java))
+                        context.startActivity(Intent(context, BreakingNewsActivity::class.java))
                     }
 
-                    2->{
-                        context.startActivity(Intent(context, SearchNewsActivity::class.java))
+                    2 -> {
+                        context.startActivity(Intent(context, NewsByCountryActivity::class.java))
+
+                    }
+
+                    3 -> {
+                        context.startActivity(Intent(context, MyBookMarksActivity::class.java))
+
+                    }
+
+                    4 -> {
+                        context.startActivity(Intent(context, ContactUsActivity::class.java))
 
                     }
                 }

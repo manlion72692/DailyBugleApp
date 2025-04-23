@@ -59,9 +59,6 @@ fun WelComeScreen() {
             context.finish()
         }
 
-            context.startActivity(Intent(context, LoginActivity::class.java))
-            context.finish()
-
     }
 
     WelComeScreenDesign()
@@ -74,16 +71,28 @@ fun WelComeScreenDesign() {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = colorResource(id = R.color.PrimaryDark)),
+            .background(color = colorResource(id = R.color.white)),
         contentAlignment = Alignment.Center
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
+
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            Image(
+                painter = painterResource(id = R.drawable.ic_dailybugle),
+                contentDescription = "Lakshminarasimha Anipakula App",
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+
             Text(
-                text = "Lakshminarasimha Anipakula",
-                color = Color.White,
+                text = "By",
+                color = Color.Gray,
                 fontSize = 36.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
@@ -94,20 +103,19 @@ fun WelComeScreenDesign() {
             Spacer(modifier = Modifier.height(12.dp))
 
             Text(
-                text = "Daily Bugle App",
-                color = Color.White,
-                fontSize = 32.sp,
+                text = "Lakshminarasimha Anipakula",
+                color = Color.Black,
+                fontSize = 36.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .padding(bottom = 24.dp)
                     .align(Alignment.CenterHorizontally)
             )
 
-            Image(
-                painter = painterResource(id = R.drawable.daily_budget),
-                contentDescription = "Lakshminarasimha Anipakula App",
-            )
+
+
+
+
         }
     }
 

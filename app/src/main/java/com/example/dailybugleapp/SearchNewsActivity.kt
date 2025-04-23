@@ -35,8 +35,6 @@ class SearchNewsActivity : ComponentActivity() {
     }
 }
 
-
-
 data class NewsDataItem(
     val title: String,
     val summary: String,

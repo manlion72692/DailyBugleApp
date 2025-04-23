@@ -13,6 +13,18 @@
         android:theme="@style/Theme.DailyBudgetApp"
         tools:targetApi="31">
         <activity
+            android:name=".ContactUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyBookMarksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewsByCountryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BreakingNewsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SearchNewsActivity"
             android:exported="false" />
         <activity
