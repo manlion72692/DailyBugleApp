@@ -23,7 +23,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -88,7 +87,11 @@ fun DailyBugleHomeActivity() {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            CardWithImageAndText(imageRes = R.drawable.iv_bookmarked, title = "BookMarked Article", 3)
+            CardWithImageAndText(
+                imageRes = R.drawable.iv_bookmarked,
+                title = "BookMarked Article",
+                3
+            )
             CardWithImageAndText(imageRes = R.drawable.iv_contactus, title = "Contact Us", 4)
 
         }
@@ -99,8 +102,10 @@ fun DailyBugleHomeActivity() {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
+            CardWithImageAndText(imageRes = R.drawable.user_stories, title = "User\nStories", 6)
+
             CardWithImageAndText(imageRes = R.drawable.iv_profile, title = "Access Profile", 5)
-            CardWithImageAndText(imageRes = R.drawable.iv_logout, title = "Logout", 6)
+//            CardWithImageAndText(imageRes = R.drawable.iv_logout, title = "Logout", 6)
 
         }
 //        CardWithImageAndText(imageRes = R.drawable.daily_budget, title = "Logout", 5)
@@ -139,6 +144,15 @@ fun CardWithImageAndText(imageRes: Int, title: String, cardId: Int) {
 
                     4 -> {
                         context.startActivity(Intent(context, ContactUsActivity::class.java))
+
+                    }
+
+                    5->{
+                        context.startActivity(Intent(context, NewsReaderProfileActivity::class.java))
+
+                    }
+                    6->{
+                        context.startActivity(Intent(context, UserStoriesActivity::class.java))
 
                     }
                 }

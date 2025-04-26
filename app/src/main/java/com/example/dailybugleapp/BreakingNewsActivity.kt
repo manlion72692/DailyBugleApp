@@ -1,6 +1,7 @@
 package com.example.dailybugleapp
 
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -73,7 +74,7 @@ class BreakingNewsActivity : ComponentActivity() {
 
 @Composable
 fun BreakingNewsScreen(onBookmarkClick: (Article) -> Unit) {
-    val context = LocalContext.current
+    val context = LocalContext.current as Activity
     var articles by remember { mutableStateOf<List<Article>>(emptyList()) }
     var isLoading by remember { mutableStateOf(true) }
 
@@ -106,6 +107,7 @@ fun BreakingNewsScreen(onBookmarkClick: (Article) -> Unit) {
                     .width(36.dp)
                     .height(36.dp)
                     .clickable {
+                        context.finish()
                     }
             )
 

@@ -47,10 +47,7 @@ fun WelComeScreen() {
     LaunchedEffect(Unit) {
         delay(3000)
 
-
-        val currentStatus = DailyBugleData.readLS(context)
-
-        if(currentStatus)
+        if(StoryNewsPrefs.isSessionActive(context))
         {
             context.startActivity(Intent(context, HomeActivity::class.java))
             context.finish()

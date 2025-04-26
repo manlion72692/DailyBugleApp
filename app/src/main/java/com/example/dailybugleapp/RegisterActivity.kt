@@ -198,7 +198,7 @@ fun RegisterScreen() {
                     "",
                     password
                 )
-                customerRegistration(customerData,context)
+                customerRegistration(customerData, context)
 
             },
             modifier = Modifier
@@ -248,6 +248,9 @@ fun customerRegistration(customerData: CustomerData, context: Context) {
                 Toast.makeText(context, "You Registered Successfully", Toast.LENGTH_SHORT)
                     .show()
 
+                context.startActivity(Intent(context, LoginActivity::class.java))
+                (context as Activity).finish()
+
             } else {
                 Toast.makeText(
                     context,
@@ -266,8 +269,8 @@ fun customerRegistration(customerData: CustomerData, context: Context) {
 }
 
 data class CustomerData(
-    var name : String = "",
-    var emailid : String = "",
-    var area : String = "",
+    var name: String = "",
+    var emailid: String = "",
+    var area: String = "",
     var password: String = ""
 )

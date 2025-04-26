@@ -173,14 +173,14 @@ fun customerLogin(customerData: CustomerData, context: Context) {
             if (dbData != null) {
                 if (dbData.password == customerData.password) {
 
-                    DailyBugleData.writeLS(context, true)
-                    DailyBugleData.writeMail(context, dbData.emailid)
-                    DailyBugleData.writeUserName(context, dbData.name)
+                    StoryNewsPrefs.setSessionStatus(context, true)
+                    StoryNewsPrefs.saveReaderEmail(context, dbData.emailid)
+                    StoryNewsPrefs.storeReaderAlias(context, dbData.name)
 
                     Toast.makeText(context, "Login Sucessfully", Toast.LENGTH_SHORT).show()
 
                     context.startActivity(Intent(context, HomeActivity::class.java))
-
+                    (context as Activity).finish()
                 } else {
                     Toast.makeText(context, "Seems Incorrect Credentials", Toast.LENGTH_SHORT).show()
                 }

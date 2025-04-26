@@ -1,5 +1,6 @@
 package com.example.dailybugleapp
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -43,7 +44,7 @@ class MyBookMarksActivity : ComponentActivity() {
 
 @Composable
 fun BookmarkedArticlesScreen() {
-    val context = LocalContext.current
+    val context = LocalContext.current as Activity
     val articleDatabase = remember { ArticleDatabase(context) }
     var bookmarkedArticles by remember { mutableStateOf(articleDatabase.getAllBookmarks()) }
 
@@ -72,6 +73,7 @@ fun BookmarkedArticlesScreen() {
                     .width(36.dp)
                     .height(36.dp)
                     .clickable {
+                        context.finish()
                     }
             )
 

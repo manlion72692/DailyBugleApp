@@ -1,5 +1,6 @@
 package com.example.dailybugleapp
 
+import android.app.Activity
 import android.os.Bundle
 import android.widget.Space
 import android.widget.Toast
@@ -38,6 +39,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -71,6 +73,8 @@ fun NewsSearchScreen(onBookmarkClick: (Article) -> Unit) {
 
     var isBookmarked by remember { mutableStateOf(false) }
 
+    val context = LocalContext.current
+
 
     // Perform the search when the user submits the search query
     LaunchedEffect(searchQuery) {
@@ -100,6 +104,7 @@ fun NewsSearchScreen(onBookmarkClick: (Article) -> Unit) {
                     .width(36.dp)
                     .height(36.dp)
                     .clickable {
+                        (context as Activity).finish()
                     }
             )
 

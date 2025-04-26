@@ -1,5 +1,6 @@
 package com.example.dailybugleapp
 
+import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
@@ -48,7 +49,7 @@ class ContactUsActivity : ComponentActivity() {
 
 @Composable
 fun ContactUsScreen() {
-    val context = LocalContext.current
+    val context = LocalContext.current as Activity
     var content by remember { mutableStateOf("") }
 
     val emailAddress = "bluefoxmobileapps@gmail.com"
@@ -84,6 +85,7 @@ fun ContactUsScreen() {
                     .width(36.dp)
                     .height(36.dp)
                     .clickable {
+                        context.finish()
                     }
             )
 
