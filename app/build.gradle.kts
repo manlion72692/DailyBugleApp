@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.dailybugleapp"
+    namespace = "dailybugle.by.lakshminarasimhas3375885"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.dailybugleapp"
+        applicationId = "dailybugle.by.lakshminarasimhas3375885"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

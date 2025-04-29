@@ -1,15 +1,16 @@
 {
   "project_info": {
     "project_number": "867044470918",
+    "firebase_url": "https://dailybugleapp-dfcb4-default-rtdb.firebaseio.com",
     "project_id": "dailybugleapp-dfcb4",
     "storage_bucket": "dailybugleapp-dfcb4.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:867044470918:android:1cdf822f3017fe2d256107",
+        "mobilesdk_app_id": "1:867044470918:android:2c9767035bfdc8c9256107",
         "android_client_info": {
-          "package_name": "com.example.dailybugleapp"
+          "package_name": "dailybugle.by.lakshminarasimhas3375885"
         }
       },
       "oauth_client": [],
